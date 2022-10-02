@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="article"
+            type="com.mihir.newsbreeze.data.model.Article" />
+
+        <variable
+            name="vm"
+            type="com.mihir.newsbreeze.viewmodel.ReadViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.screen.ReadActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/image_banner_of_the_news_item"
+            tools:src="@tools:sample/avatars"/>
+
+        <ImageView
+            android:id="@+id/imgV_Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:src="@drawable/ic_save_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/icon_to_save_the_news_item" />
+
+        <ImageView
+            android:id="@+id/imgV_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:src="@drawable/ic_baseline_arrow_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/icon_to_go_back" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-30dp"
+            android:background="@drawable/scrollview_style"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <ImageView
+                android:id="@+id/imgV_person"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/man"
+                android:contentDescription="@string/image_of_the_publisher" />
+
+            <TextView
+                android:id="@+id/txtV_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:textColor="@color/blackish_text"
+                android:textSize="@dimen/_16ssp"
+                android:fontFamily="sans-serif"
+                android:text="@{article.component2()}"
+                app:layout_constraintBottom_toBottomOf="@+id/imgV_person"
+                app:layout_constraintEnd_toStartOf="@+id/btnReadSave"
+                app:layout_constraintStart_toEndOf="@+id/imgV_person"
+                app:layout_constraintTop_toTopOf="@+id/imgV_person"
+                tools:text="James Adam" />
+
+            <TextView
+                android:id="@+id/txtBelowName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:textColor="@color/text_date"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="sans-serif"
+                android:text="@{article.component5()}"
+                app:layout_constraintEnd_toStartOf="@+id/btnReadSave"
+                app:layout_constraintStart_toEndOf="@+id/imgV_person"
+                app:layout_constraintTop_toBottomOf="@+id/txtV_name"
+                tools:text="lorem ipsum" />
+
+            <Button
+                android:id="@+id/btnReadSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:backgroundTint="@color/green"
+                android:text="@string/save"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtV_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <TextView
+                android:id="@+id/readTxtContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:text="@{article.component3()}"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:fontFamily="@font/queens"
+                android:textColor="@color/blackish_text"
+                android:textSize="@dimen/_14ssp"
+                tools:text="Some content will be shown here"/>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/txtV_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:textSize="@dimen/_26ssp"
+            android:textColor="@color/white"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/_3sdp"
+            android:fontFamily="@font/queens"
+            android:text="@{article.component7()}"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="This is the heading"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

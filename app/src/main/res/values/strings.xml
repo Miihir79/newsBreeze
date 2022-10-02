@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">newsBreeze</string>
+    <string name="save">Save</string>
+    <string name="read">Read</string>
+    <string name="image_of_the_publisher">image of the publisher</string>
+    <string name="image_banner_of_the_news_item">image banner of the news item</string>
+    <string name="icon_to_save_the_news_item">icon to save the news item</string>
+    <string name="icon_to_go_back">icon to go back</string>
+    <string name="hashtags">#hashtags</string>
+    <string name="newsbreeze">NewsBreeze</string>
+    <string name="icon_save">icon save</string>
+    <string name="saved">Saved</string>
+    <string name="today">Today</string>
+    <string name="see_all">See all...</string>
+    <string name="you_have_not_saved_any_news_yet">You have not saved any news yet!</string>
+</resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.screen.SavedNewsActivity">
+
+    <ImageView
+        android:id="@+id/imgV_Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/icon_to_go_back" />
+
+    <TextView
+        android:id="@+id/txtSaved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/saved"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_24ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:background="@drawable/searchbar_style"
+        app:defaultQueryHint="Search"
+        app:iconifiedByDefault="false"
+        android:elevation="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSaved"
+        app:queryBackground="@null" />
+
+    <TextView
+        android:id="@+id/txtToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/today"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSaved"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:elevation="@dimen/_5sdp"
+        android:background="@drawable/recycler_style"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtToday" />
+
+    <TextView
+        android:id="@+id/txtSeeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/see_all"
+        android:textColor="@color/green"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/_13ssp"
+        android:layout_marginEnd="@dimen/_28sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtToday"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtV_noNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:text="@string/you_have_not_saved_any_news_yet"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerSaved"
+        android:elevation="@dimen/_12sdp"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/recyclerSaved"
+        app:layout_constraintTop_toTopOf="@+id/recyclerSaved" />
+</androidx.constraintlayout.widget.ConstraintLayout>
