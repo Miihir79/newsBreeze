@@ -3,6 +3,9 @@
 <p>
 <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>  
 <img src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white"/>
+
+[![NewsBreeze](https://img.shields.io/badge/NewsBreeze✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/Miihir79/newsBreeze/releases/tag/1.0.0)
+
 </p>
 
 *NewsBreeze* brings to you the latest breaking news from the <a href="https://newsapi.org/">NewsApi</a>.
@@ -27,6 +30,10 @@ It has features like:
 ### Demo
 
 https://user-images.githubusercontent.com/66465511/193512512-80ffbb9b-4103-41fe-87aa-1ccf26775fc3.mp4
+
+
+### ***Download the app from here👇***
+[![NewsBreeze](https://img.shields.io/badge/NewsBreeze✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/Miihir79/newsBreeze/releases/tag/1.0.0)
 
 
 - It follows latest android practices like MVVM and LiveData.
