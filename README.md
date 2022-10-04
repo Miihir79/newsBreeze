@@ -40,6 +40,9 @@ https://user-images.githubusercontent.com/66465511/193512512-80ffbb9b-4103-41fe-
 
 - Have implemented Network checking feature which alearts user when network connection is lost.
 
+- Hidden API key in local.properties file. To do the same, open local.properties file and add the following line 
+`API_KEY=yourkey`
+
 - Have implemented R8 for reduced app size.
 
 #### R8 optimizations result
