@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.mihir.newsbreeze.BuildConfig
 import com.mihir.newsbreeze.data.local.NewsDatabase
 import com.mihir.newsbreeze.data.model.Article
@@ -12,12 +13,21 @@ import com.mihir.newsbreeze.data.remote.Request
 import com.mihir.newsbreeze.data.repo.NewsRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 class ViewModel(application: Application):AndroidViewModel(application) {
     private val baseUrl ="https://newsapi.org/"
-    private val retrofit by lazy { Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()}
+    private val okHttpClient: OkHttpClient by lazy {
+        OkHttpClient.Builder()
+            .connectTimeout(30000, TimeUnit.MILLISECONDS)
+            .readTimeout(30000, TimeUnit.MILLISECONDS)
+            .addNetworkInterceptor(StethoInterceptor())
+            .build()
+    }
+    private val retrofit by lazy { Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build()}
     private val service by lazy { retrofit.create(Request::class.java)}
     private val dao by lazy { NewsDatabase.getDatabase(application).NewsDao() }
     private val repo by lazy { NewsRepo(dao) }

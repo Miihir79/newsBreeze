@@ -16,9 +16,9 @@
     </style>
 
     <style name="Theme.App.Splash" parent="Theme.SplashScreen">
-        <item name="android:windowSplashScreenBackground">@color/white</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
-        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/man</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
         <item name="postSplashScreenTheme">@style/Theme.NewsBreeze </item>
     </style>
 
